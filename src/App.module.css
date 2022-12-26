@@ -1,0 +1,17 @@
+.content {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.headerButtons {
+  display: flex;
+  gap: 20px;
+}
