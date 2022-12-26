@@ -2,15 +2,11 @@ import React, { useState } from "react";
 
 import styles from "./App.module.css";
 import { Item } from "./components/Item";
-
-export type CoordsProps = {
-  clientX: number;
-  clientY: number;
-};
+import { Coord } from "./types/Coord";
 
 function App() {
-  const [undoPoints, setUndoPoints] = useState<CoordsProps[]>([]);
-  const [redoPoints, setRedoPoints] = useState<CoordsProps[]>([]);
+  const [undoPoints, setUndoPoints] = useState<Coord[]>([]);
+  const [redoPoints, setRedoPoints] = useState<Coord[]>([]);
 
   function getPositionOnClick({
     clientX,
@@ -22,10 +18,10 @@ function App() {
 
   function handlePoints(
     e: React.MouseEvent<HTMLElement>,
-    originArray: CoordsProps[],
-    destArray: CoordsProps[],
-    originFn: React.Dispatch<React.SetStateAction<CoordsProps[]>>,
-    destFn: React.Dispatch<React.SetStateAction<CoordsProps[]>>
+    originArray: Coord[],
+    destArray: Coord[],
+    originFn: React.Dispatch<React.SetStateAction<Coord[]>>,
+    destFn: React.Dispatch<React.SetStateAction<Coord[]>>
   ) {
     e.stopPropagation();
 
